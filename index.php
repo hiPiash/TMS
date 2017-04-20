@@ -72,7 +72,7 @@
 		color: white;
 		background-color: #0a1429;
 		font-family: Arvo;
-		width: 15%;
+		width: 25%;
 	}
 	
 	#site-header {
@@ -116,7 +116,7 @@
 			
 			<div class="site-nav">
 			<ul>
-				<li><a href="register.php"> Sign UP </a></li>
+				<li><a href="signup.php"> Sign UP </a></li>
 				<li><a href="login.php"> Login </a></li>
 				<li><a href="#"> Holiday Packages </a></li>
 				<li><a href="contact.php"> Contact </a></li>
@@ -128,7 +128,7 @@
 		
 		<div id="search">
 			<h1> <b> Where Do You Want to Go? </b> </h1>
-			<h3> Trips, experiences and places. All in one service. </h3>
+			<h3> Trips, experiences and places all in one service </h3>
 			
 			<div>
 				<form action="./searchresult.php">
@@ -150,35 +150,35 @@
 				<tbody>
 					<tr>
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/01.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/01.jpg" />
 						</td>
 
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/02.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/02.jpg" />
 						</td>
 
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/03.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/03.jpg" />
 						</td>
 					</tr>
 
 					<tr>
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/04.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/04.jpg" />
 						</td>
 
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/05.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/07.jpg" />
 						</td>
 
 						<td>
-						<h4 class="place-name">Swamp Forest</h4>
-						<img width=300px height=300px src="images/06.jpg" />
+						<h4 class="place-name">Place Name</h4>
+						<img width=70% height=auto src="images/06.jpg" />
 						</td>
 					</tr>
 				</tbody>
