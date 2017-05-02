@@ -1,6 +1,7 @@
 <?php require_once(APP_ROOT."/data/data_access.php") ?>
 
 <?php
+
 	function addUser($user){
 		return addUserToDb($person);
 	}
@@ -12,6 +13,15 @@
 	function removeUser($id){
 		
 	}
+	
+	function getUserById($id){
+		return getUserByIdFromDb($id);
+	}
+	
+	function getUserByLogin($login){
+		return getUserByLoginFromDb($login);
+	}
+	
 	
 	function getAllPlaces(){
 		return getAllPlacesFromDb();
@@ -33,9 +43,14 @@
 		return getRoomsByPlaceIdFromDb($placeId);
 	}
 	
+	function addBooking($booking){
+		return addBookingToDb($booking);
+	}
+	
 	function getBookingByRoomId($id){
 		return getBookingByRoomIdFromDb($id);
 	}
+	
 	
 	
 	

@@ -27,29 +27,6 @@
 	foreach($rooms as $room){
 		$bookings[] = getBookingByRoomId($room['roomid']);
 	}
-	
-	// var_dump($bookings);
-	// var_dump($rooms);
-	
-	// $allPlaces = getAllPlaces();
-	// $places = array();
-	// $divisions = array();
-	
-	// //var_dump($allPlaces);
-	
-	// for($i=0; $i < sizeof($allPlaces); ++$i){
-		// $places[$i] = $allPlaces[$i]['name'];
-	// }
-	
-	// for($i=0; $i < sizeof($allPlaces); ++$i){
-		// $divisions[$i] = $allPlaces[$i]['division'];
-	// }
-	
-	// $temp = $divisions;
-	// $divisions = array_unique($temp);
-	
-	// var_dump($places);
-	// var_dump($divisions);
 ?>
 
 <!DOCTYPE html>
@@ -85,11 +62,6 @@
 		var counter=0;
 		
 		addFrame();
-		// document.onreadystatechange = function(){
-			// if(document.readyState){
-		
-			// }
-		// }
 		
 		
 		function addFrame(){
@@ -105,76 +77,74 @@
 		}
 		
 		function init(){
-			for(var i=0; i<rooms.length; i++){
-				document.getElementById("canvas").innerHTML += sr_frame;
-				document.getElementsByClassName("title")[i].innerHTML = rooms[i].name;
-				document.getElementsByClassName("host")[i].innerHTML = rooms[i].host;
-				document.getElementsByClassName("desc")[i].innerHTML = rooms[i].description;
-				document.getElementsByClassName("capacity")[i].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
-				document.getElementsByClassName("price")[i].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
-			}
-		}
-		
-		// function control(){
 			// for(var i=0; i<rooms.length; i++){
-				// if(bookings[i] == null){
-					// if(counter < rooms.length){
-						// addData();console.log("control adddata 1 "+i);console.log("control counter"+i);
-					// }
-				// }
-				// else if (bookings[i].checkin < document.getElementById("checkout").value && bookings[i].checkout > document.getElementById("checkin").value){
-					// //counter = counter + 1;
-					// console.log("counter inc "+i);
-				// }
-				// else{
-					// if(counter < rooms.length){
-						// addData();console.log("control adddata 2 "+i);
-					// }
-				// }
+				// document.getElementById("canvas").innerHTML += sr_frame;
+				// document.getElementsByTagName("form")[i].setAttribute("id", "form"+i);
+				// document.getElementsByClassName("title")[i].innerHTML = rooms[i].name;
+				// document.getElementsByClassName("host")[i].innerHTML = rooms[i].host;
+				// document.getElementsByClassName("desc")[i].innerHTML = rooms[i].description;
+				// document.getElementsByClassName("capacity")[i].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
+				// document.getElementsByClassName("price")[i].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
+				// document.getElementsByName("submit")[i].setAttribute("onclick", "doBooking("+i+")");
+				
+				// document.getElementsByName("roomId")[i].value = rooms[i].roomid;
+				// document.getElementsByName("roomName")[i].value = rooms[i].name;
+				// document.getElementsByName("roomPrice")[i].value = rooms[i].price;
+				// document.getElementsByName("roomCapacity")[i].value = rooms[i].capacity;
+				// document.getElementsByName("checkIn")[i].value = document.getElementById("checkin").value;
+				// document.getElementsByName("checkOut")[i].value = document.getElementById("checkout").value;
+				// document.getElementsByName("personNumber")[i].value = document.getElementById("personNumber").value;
 			// }
-		// }
-		
-		
-			
-		
-		// function addData(){
-			// document.getElementById("canvas").innerHTML += sr_frame;
-			// console.log("adddata called! counter: " + counter);
-			// document.getElementsByClassName("title")[counter].innerHTML = rooms[counter].name;
-			// document.getElementsByClassName("host")[counter].innerHTML = rooms[counter].host;
-			// document.getElementsByClassName("desc")[counter].innerHTML = rooms[counter].description;
-			// document.getElementsByClassName("capacity")[counter].innerHTML = "Capacity: " + rooms[counter].capacity + " person(s)";
-			// document.getElementsByClassName("price")[counter].innerHTML = "Price: tk." + rooms[counter].price + "/- per night";
-			// counter = counter + 1;
-			// console.log("adddata counter: " + counter);
+		}
 
-		// }
 		
 		function control(){
 			var j=0;
 			for(var i=0; i<rooms.length; i++){
-				if(document.getElementById("personNumber").value <= rooms[i].capacity){
-					if(bookings[i] == null){
-						document.getElementById("canvas").innerHTML += sr_frame;
-						document.getElementsByClassName("title")[j].innerHTML = rooms[i].name;
-						document.getElementsByClassName("host")[j].innerHTML = rooms[i].host;
-						document.getElementsByClassName("desc")[j].innerHTML = rooms[i].description;
-						document.getElementsByClassName("capacity")[j].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
-						document.getElementsByClassName("price")[j].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
-						j++;
-					}
-					else if (bookings[i].checkin < document.getElementById("checkout").value && bookings[i].checkout > document.getElementById("checkin").value){
-						
-					}
-					else{
-						document.getElementById("canvas").innerHTML += sr_frame;
-						document.getElementsByClassName("title")[j].innerHTML = rooms[i].name;
-						document.getElementsByClassName("host")[j].innerHTML = rooms[i].host;
-						document.getElementsByClassName("desc")[j].innerHTML = rooms[i].description;
-						document.getElementsByClassName("capacity")[j].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
-						document.getElementsByClassName("price")[j].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
-						j++
-					}
+				if(bookings[i] == null){
+					document.getElementById("canvas").innerHTML += sr_frame;
+					document.getElementsByTagName("form")[j].setAttribute("id", "form"+i);
+					document.getElementsByClassName("title")[j].innerHTML = rooms[i].name;
+					document.getElementsByClassName("host")[j].innerHTML = rooms[i].host;
+					document.getElementsByClassName("desc")[j].innerHTML = rooms[i].description;
+					document.getElementsByClassName("capacity")[j].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
+					document.getElementsByClassName("price")[j].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
+					document.getElementsByName("submit")[j].setAttribute("onclick", "doBooking("+i+")");
+					
+					document.getElementsByName("roomId")[j].value = rooms[i].roomid;
+					document.getElementsByName("roomName")[j].value = rooms[i].name;
+					document.getElementsByName("roomPrice")[j].value = rooms[i].price;
+					document.getElementsByName("roomCapacity")[j].value = rooms[i].capacity;
+					document.getElementsByName("checkIn")[j].value = document.getElementById("checkin").value;
+					document.getElementsByName("checkOut")[j].value = document.getElementById("checkout").value;
+					document.getElementsByName("personNumber")[j].value = document.getElementById("personNumber").value;
+					
+					
+					
+					j++;
+				}
+				else if (new Date(document.getElementById("checkout").value) >= new Date(bookings[i].checkin) && new Date(document.getElementById("checkin").value) <= new Date(bookings[i].checkout) ){
+					
+				}
+				else{
+					document.getElementById("canvas").innerHTML += sr_frame;
+					document.getElementsByTagName("form")[j].setAttribute("id", "form"+i);
+					document.getElementsByClassName("title")[j].innerHTML = rooms[i].name;
+					document.getElementsByClassName("host")[j].innerHTML = rooms[i].host;
+					document.getElementsByClassName("desc")[j].innerHTML = rooms[i].description;
+					document.getElementsByClassName("capacity")[j].innerHTML = "Capacity: " + rooms[i].capacity + " person(s)";
+					document.getElementsByClassName("price")[j].innerHTML = "Price: tk." + rooms[i].price + "/- per night";
+					document.getElementsByName("submit")[j].setAttribute("onclick", "doBooking("+i+")");
+					
+					document.getElementsByName("roomId")[j].value = rooms[i].roomid;
+					document.getElementsByName("roomName")[j].value = rooms[i].name;
+					document.getElementsByName("roomPrice")[j].value = rooms[i].price;
+					document.getElementsByName("roomCapacity")[j].value = rooms[i].capacity;
+					document.getElementsByName("checkIn")[j].value = document.getElementById("checkin").value;
+					document.getElementsByName("checkOut")[j].value = document.getElementById("checkout").value;
+					document.getElementsByName("personNumber")[j].value = document.getElementById("personNumber").value;
+					
+					j++
 				}
 			}
 		}
@@ -190,24 +160,40 @@
 		
 		function filter(){
 			var flag = true;
-			if(document.getElementById("checkin").value == ""){
-				alert("Please select the check-in date");
-				flag = false;
-			}			
-			
-			if(document.getElementById("checkout").value == ""){
-				alert("Please select the check-out date");
-				flag = false;
-			}
-			
-			if(document.getElementById("checkin").value > document.getElementById("checkout").value){
-				alert("Please provide valid dates");
-				flag = false;
-			}
+			flag = checkDatePicker();
 			
 			if(flag){
 				clearCanvas();
 				control();
+			}
+		}
+		
+		function checkDatePicker(){
+			if(document.getElementById("checkin").value == ""){
+				alert("Please select the check-in date");
+				return false;
+			}			
+			
+			else if(document.getElementById("checkout").value == ""){
+				alert("Please select the check-out date");
+				return false;
+			}
+			
+			else if(new Date(document.getElementById("checkin").value) > new Date(document.getElementById("checkout").value)){
+				alert("Please provide valid check-in check-out dates");
+				return false;
+			}
+			else
+				return true;
+
+		}
+		
+		
+		function doBooking(id){
+			var checkDates = checkDatePicker();
+			if(checkDates != true){
+				var form = document.getElementById("form"+id);
+				form.submit;
 			}
 		}
 		
@@ -247,7 +233,7 @@
 					</div>
 				</tr>
 				<tr>
-					<td colspan="4" align="center"> <input type="button" value="Filter" onclick="filter()"/> </td>
+					<td colspan="4" align="center"> <input type="button" value="Apply" onclick="filter()"/> </td>
 				</tr>
 			</table>
 		</div>
@@ -257,3 +243,26 @@
 	</div>
 	
 </body>
+
+<?php
+if($_SERVER['REQUEST_METHOD']=="POST"){
+	
+	$booking['userId'] = $_SESSION['id'];
+	$booking['roomId'] = $_POST['roomId'];
+	$booking['roomName'] = $_POST['roomName'];
+	$booking['roomPrice'] = $_POST['roomPrice'];
+	$booking['roomCapacity'] = $_POST['roomCapacity'];
+	$booking['checkIn'] = $_POST['checkIn'];
+	$booking['checkOut'] = $_POST['checkOut'];
+	$booking['personNumber'] = $_POST['personNumber'];
+	
+	if($booking['checkIn'] != "" || $booking['checkOut'] != ""){
+		$_SESSION['bookingDetails'] = $booking;
+
+		echo "<script> window.location.href = 'index.php?show=booking'</script>";
+	}
+	
+
+
+}
+?>
